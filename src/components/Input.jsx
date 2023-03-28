@@ -7,31 +7,24 @@ function Input() {
   const inputText = useRef();
   const dispatch = useDispatch();
 
-  const addTodoHandler = async (e) => {
+  const addTodoHandler = (e) => {
     e.preventDefault();
-
-    let todo = {
-      date: new Date(),
-      text: inputText.current.value,
-    };
-
-    const response = await fetch(
-      'https://test-http-77e4b-default-rtdb.europe-west1.firebasedatabase.app/todo.json',
-      { method: 'POST', body: JSON.stringify(todo) }
-    );
-    console.log(response);
+    let text = inputText.current.value;
+    if (text.length > 0) {
+      dispatch(
+        addTodo({
+          text: text,
+          date: new Date().toISOString(),
+        })
+      );
+      inputText.current.value = '';
+    }
   };
 
   return (
     <form
       onSubmit={(e) => {
-        e.preventDefault();
-        dispatch(
-          addTodo({
-            text: inputText.current.value,
-            date: new Date().toISOString(),
-          })
-        );
+        addTodoHandler(e);
       }}
       className={style.input_wrapper}
     >
