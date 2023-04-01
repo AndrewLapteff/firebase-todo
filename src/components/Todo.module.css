@@ -27,6 +27,7 @@
   flex-grow: 0.95;
 }
 .edit_btn {
+  cursor: pointer;
   background-color: rgb(24, 42, 141);
   font-size: 1.2rem;
   border-style: solid;
@@ -35,14 +36,16 @@
   border-radius: 5px;
 }
 .done_btn {
+  cursor: pointer;
   background-color: rgb(18, 150, 18);
   border-style: solid;
   border-color: rgb(2, 89, 2);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border-radius: 5px;
 }
 .delete_btn {
-  font-size: 1.3rem;
+  cursor: pointer;
+  font-size: 1.55rem;
   background-color: rgb(190, 17, 17);
   border-style: solid;
   border-color: rgb(89, 8, 2);

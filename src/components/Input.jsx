@@ -11,12 +11,7 @@ function Input() {
     e.preventDefault();
     let text = inputText.current.value;
     if (text.length > 0) {
-      dispatch(
-        addTodo({
-          text: text,
-          date: new Date().toISOString(),
-        })
-      );
+      dispatch(addTodo(text));
       inputText.current.value = '';
     }
   };
